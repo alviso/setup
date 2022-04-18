@@ -13,10 +13,11 @@ router.get('/', function(req, res, next) {
     }
     networks = networks.filter(e=>e.ssid.length>0)
     networks = networks.sort((a,b)=>(b.rssi - a.rssi))
-    console.log(networks);
+    // console.log(networks);
+    res.json(networks)
   });
 
-  res.render('index', { title: 'Express' });
+  // res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
