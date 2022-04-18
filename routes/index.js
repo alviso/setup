@@ -11,6 +11,8 @@ router.get('/', function(req, res, next) {
       console.error(err);
       return;
     }
+    networks = networks.filter(e=>e.ssid.length>0)
+    networks = networks.sort((a,b)=>(a.rssi - b.rssi))
     console.log(networks);
   });
 
